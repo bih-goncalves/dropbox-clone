@@ -2,7 +2,7 @@ const Box = require("../models/Box");
 
 class BoxController {
     async store (req, res) {
-        const box = await Box.find({title : req.body.title});
+        const box = await Box.findOne({title : req.body.title});
 
         if (box.length > 0){
             return res.json(box);
