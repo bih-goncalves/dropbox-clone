@@ -5,7 +5,7 @@ class BoxController {
         const box = await Box.find({title : req.body.title});
 
         if (box.length > 0){
-            return res.send('Name exists already');
+            return res.json(box);
         }else{
             const aux = await Box.create(req.body);
             return res.json(aux);
