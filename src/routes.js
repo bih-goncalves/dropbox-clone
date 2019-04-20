@@ -9,7 +9,7 @@ const FileController = require('./controllers/FileController');
 
 // 
 routes.post('/boxes', BoxController.store);
-routes.get('/boxes/:id', BoxController.show);
-routes.post('/boxes/:id/files', multer(multerConfig).single('file'), FileController.store);
+routes.get('/boxes/:title', BoxController.show);
+routes.post('/boxes/:title/files', multer(multerConfig).single('file'), FileController.store);
 
 module.exports = routes;
