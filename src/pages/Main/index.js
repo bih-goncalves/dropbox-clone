@@ -15,8 +15,8 @@ export default class Main extends Component {
         const response = await api.post('boxes', {
             title: this.state.newBox,
         });
-
-        this.props.history.push(`/box/${response.data._id}`);
+        
+        this.props.history.push(`/box/${response.data.title}`);
     }
 
     handleInputChange = e => {
@@ -29,11 +29,11 @@ export default class Main extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <img src={logo} alt=""/>
                     <input 
-                        placeholder="Criar um box"
+                        placeholder="Logar em um box"
                         value={this.state.newBox}
                         onChange={this.handleInputChange}
                     />
-                    <button type="submit">Criar</button>
+                    <button type="submit">Logar</button>
                 </form>
             </div>
         );
